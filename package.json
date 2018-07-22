@@ -1,0 +1,32 @@
+{
+  "name": "numbers",
+  "version": "1.0.0",
+  "description": "Operations with numbers",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "tslint -e 'node_modules/**' '**/*.ts'",
+    "build": "npm run clean && npm run lint && tsc",
+    "prestart": "npm run build",
+    "start": "node dist/src/index.js"  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luigisamurai/numbers.git"
+  },
+  "keywords": [
+    "ordered",
+    "numbers",
+    "less"
+  ],
+  "author": "Luis Alberto Bolaños Salazar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luigisamurai/numbers/issues"
+  },
+  "homepage": "https://github.com/luigisamurai/numbers#readme",
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2"
+  }
+}
