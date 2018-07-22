@@ -2,6 +2,18 @@
     "defaultSeverity": "error",
     "extends": "tslint-config-airbnb",
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "trailing-comma": [
+            true,
+            {
+                "multiline": {
+                "objects": "always",
+                "functions": "never",
+                "typeLiterals": "ignore"
+                },
+                "esSpecCompliant": true
+            }
+            ]
+    },
     "rulesDirectory": []
 }

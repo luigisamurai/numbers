@@ -1,20 +1,5 @@
 export class SortedNumber {
-  public isSortNumber(number: number): boolean {
-    const digits: string[] =  number.toString().split('');
-
-    for (let index = 0; index < digits.length - 1; index = index + 1) {
-      const firstDigit: string = number.toString().charAt(index);
-      const secondDigit: string = number.toString().charAt(index + 1);
-
-      if (firstDigit > secondDigit) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  public findSortedIfIsNotSort(number: number): number {
+  private findSortedIfIsNotSort(number: number): number {
     let pow: number = 0;
     let isSortNumber: boolean = false;
     let foundNumber: number = number;
@@ -32,11 +17,37 @@ export class SortedNumber {
     return foundNumber;
   }
 
+  public isSortNumber(number: number): boolean {
+    const digits: string[] =  number.toString().split('');
+
+    for (let index = 0; index < digits.length - 1; index = index + 1) {
+      const firstDigit: string = number.toString().charAt(index);
+      const secondDigit: string = number.toString().charAt(index + 1);
+
+      if (firstDigit > secondDigit) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  public haveTheSameDigits(number: number): boolean {
+    const numberAsString: string = number.toString();
+    const firstDigit: string = numberAsString.charAt(0);
+    const numberToCompare: number = parseInt(firstDigit.repeat(numberAsString.length), 10);
+
+    return number === numberToCompare;
+  }
+
   public findSortedNumber(number: number): number {
     const isSortNumber: boolean = this.isSortNumber(number);
+    const allDigitsAreSame: boolean = this.haveTheSameDigits(number);
     let sortedNumber: number;
 
-    if (isSortNumber) {
+    if (number < 10) {
+      sortedNumber = number;
+    } else if (isSortNumber && !allDigitsAreSame) {
       sortedNumber = number - 1;
     } else {
       sortedNumber = this.findSortedIfIsNotSort(number);
