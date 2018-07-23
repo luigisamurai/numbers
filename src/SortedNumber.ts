@@ -41,7 +41,6 @@ export class SortedNumber {
   }
 
   public findSortedNumber(number: number): number {
-    // const isSortNumber: boolean = this.isSortNumber(number);
     const allDigitsAreSame: boolean = this.haveTheSameDigits(number);
 
     if (number <= 0) {
