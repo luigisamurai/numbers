@@ -29,8 +29,10 @@
   "homepage": "https://github.com/luigisamurai/numbers#readme",
   "devDependencies": {
     "@types/chai": "^4.1.4",
+    "@types/mkdirp": "^0.5.2",
     "@types/mocha": "^5.2.5",
     "chai": "^4.1.2",
+    "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.9.2",

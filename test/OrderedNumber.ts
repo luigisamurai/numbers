@@ -52,7 +52,7 @@ describe('Given a list of numbers to verify', () => {
       222,
       2222,
       99999,
-      88888,
+      88888
     ];
 
     listOfSortedNumbers.forEach((number: number) => {
@@ -74,7 +74,7 @@ describe('Given a list of numbers to verify', () => {
       2122,
       99199,
       88818,
-      888881,
+      888881
     ];
 
     listOfSortedNumbers.forEach((number: number) => {
