@@ -1,3 +1,4 @@
+import { integer, engines } from 'random-js';
 import { expect } from 'chai';
 import { SortedNumber } from '../src/SortedNumber';
 
@@ -115,6 +116,66 @@ describe('Given a list of numbers to verify', () => {
     listOfSortedNumbers.forEach((list: any) => {
       it(`then the sorted number of ${list.number} should be ${list.expected}`, () => {
         expect(sortedNumber.findSortedNumber(list.number)).to.equal(list.expected);
+      });
+    });
+  });
+
+  describe('when it finds the sorted number of a list of numbers less that 10', () => {
+    const listOfSortedNumbers: any[] = [
+      integer(1, 9)(engines.nativeMath),
+      integer(1, 9)(engines.nativeMath),
+      integer(1, 9)(engines.nativeMath)
+    ];
+
+    listOfSortedNumbers.forEach((number: number) => {
+      it(`then the found number should be equal`, () => {
+        const foundNumber: number = sortedNumber.findSortedNumber(number);
+        const isSortedNumber: boolean = sortedNumber.isSortNumber(foundNumber);
+
+        expect(foundNumber).to.be.equal(number);
+        expect(isSortedNumber).to.equal(true);
+      });
+    });
+  });
+
+  describe('when it finds the sorted number of a list of random numbers', () => {
+    const listOfSortedNumbers: any[] = [
+      integer(10, 99)(engines.nativeMath),
+      integer(100, 999)(engines.nativeMath),
+      integer(1000, 9999)(engines.nativeMath),
+      integer(10000, 99999)(engines.nativeMath),
+      integer(100000, 999999)(engines.nativeMath),
+      integer(1000000, 9999999)(engines.nativeMath)
+    ];
+
+    listOfSortedNumbers.forEach((number: number) => {
+      it(`then the found number should be less that ${number} and sorted`, () => {
+        const foundNumber: number = sortedNumber.findSortedNumber(number);
+        const isSortedNumber: boolean = sortedNumber.isSortNumber(foundNumber);
+
+        expect(foundNumber).to.be.lessThan(number);
+        expect(isSortedNumber).to.equal(true);
+      });
+    });
+  });
+
+  describe('when it finds the sorted number of a list of limit numbers', () => {
+    const listOfSortedNumbers: any[] = [
+      10,
+      100,
+      1000,
+      10000,
+      100000,
+      1000000
+    ];
+
+    listOfSortedNumbers.forEach((number: number) => {
+      it(`then the found number should be less that ${number} and sorted`, () => {
+        const foundNumber: number = sortedNumber.findSortedNumber(number);
+        const isSortedNumber: boolean = sortedNumber.isSortNumber(foundNumber);
+
+        expect(foundNumber).to.be.lessThan(number);
+        expect(isSortedNumber).to.equal(true);
       });
     });
   });
