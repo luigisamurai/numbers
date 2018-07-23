@@ -9,7 +9,7 @@
 * _install dependencies:_ in the root of the project (numbers), execute the following command:
 
 ```sh
-> npm install
+> npm i
 ```
 
 the folder node_modules should be created.
