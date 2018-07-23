@@ -16,7 +16,7 @@ the folder node_modules should be created.
 
 ## Execute it
 
-  1. Create and/or fill the input file (./result/input) with the numbers to be evaluated.
+  1. Create and/or fill the input file ( it should be in .result/input) with the numbers to be evaluated.
   1. Execute the command
 
   ```sh
@@ -24,6 +24,11 @@ the folder node_modules should be created.
   ```
 
 ### Execute it with parameter
+
+  1. Create and/or fill the input file, it should be in .result/[fileName]
+  1. Execute the command with the following parameters
+    - inputFileName: input file name (required)
+    - outputFileName: output file name (optional)
 
   ```sh
   > npm start -- [inputFileName] [outputFileName]
