@@ -41,18 +41,21 @@ export class SortedNumber {
   }
 
   public findSortedNumber(number: number): number {
-    const isSortNumber: boolean = this.isSortNumber(number);
+    // const isSortNumber: boolean = this.isSortNumber(number);
     const allDigitsAreSame: boolean = this.haveTheSameDigits(number);
-    let sortedNumber: number;
 
-    if (number < 10) {
-      sortedNumber = number;
-    } else if (isSortNumber && !allDigitsAreSame) {
-      sortedNumber = number - 1;
-    } else {
-      sortedNumber = this.findSortedIfIsNotSort(number);
+    if (number <= 0) {
+      return undefined;
     }
 
-    return sortedNumber;
+    if (number < 10) {
+      return number;
+    }
+
+    if (allDigitsAreSame === false && this.isSortNumber(number - 1)) {
+      return number - 1;
+    }
+
+    return this.findSortedIfIsNotSort(number);
   }
 }

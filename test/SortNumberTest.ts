@@ -15,7 +15,8 @@ describe('Given a list of numbers to verify', () => {
       199,
       888,
       12345678,
-      9999999
+      9999999,
+      556
     ];
 
     listOfSortedNumbers.forEach((number: number) => {
@@ -94,7 +95,8 @@ describe('Given a list of numbers to verify', () => {
       { number: 11111110, expected: 9999999 },
       { number: 101, expected: 99 },
       { number: 998, expected: 899 },
-      { number: 1000, expected: 999 }
+      { number: 1000, expected: 999 },
+      { number: 556, expected: 555 }
     ];
 
     listOfNotSortedNumbers.forEach((list: any) => {
@@ -106,8 +108,10 @@ describe('Given a list of numbers to verify', () => {
 
   describe('when it finds the sorted number of a list of sorted numbers', () => {
     const listOfSortedNumbers: any[] = [
+      { number: 0 },
       { number: 9, expected: 9 },
       { number: 234, expected: 233 },
+      { number: 266, expected: 259 },
       { number: 888, expected: 799 },
       { number: 555, expected: 499 },
       { number: 1578, expected: 1577 }

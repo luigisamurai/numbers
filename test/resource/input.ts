@@ -1,4 +1,5 @@
 const listOfNumbers = [
+  { number: 0 },
   { number: 20, expected: 19 },
   { number: 132, expected: 129 },
   { number: 312, expected: 299 },
